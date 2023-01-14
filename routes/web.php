@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\logoutController;
+use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/', [homeController::class, 'index'])->name('home.index');
+
+    Route::group(['middleware' => ['guest']], function () {
+
+        Route::get('/register', [registerController::class, 'show'])->name('register.show');
+        Route::post('/register', [registerController::class, 'register'])->name('register.perform');
+
+        Route::get('/login', [loginController::class, 'show'])->name('login.show');
+        Route::post('/login', [loginController::class, 'login'])->name('login.perform');
+    });
+
+    Route::group(['middleware' => ['auth']], function () {
+        Route::get('/logout', [logoutController::class, 'perform'])->name('logout.perform');
+    });
 });
