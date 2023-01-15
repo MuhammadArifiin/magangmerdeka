@@ -27,7 +27,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/mahasiswa/tambah', [studentController::class, 'create'])->name('student.create');
     Route::get('/mahasiswa/detail/{id}', [studentController::class, 'show']);
     Route::post('/mahasiswa', [studentController::class, 'store'])->name('student.store');
-    // Route::get('/mahasiswa', [studentController::class, 'search'])->name('student.search');
     Route::get('/mahasiswa/{id}', [studentController::class, 'edit']);
     Route::put('/mahasiswa/{id}', [studentController::class, 'update']);
     Route::delete('/mahasiswa/{id}', [studentController::class, 'destroy']);
