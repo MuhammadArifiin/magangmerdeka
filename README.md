@@ -17,3 +17,8 @@ Aplikasi ini dibuat menggunakan bahasa pemrograman PHP versi 8.1.13 dengan frame
 6. Jalankan perintah ```php artisan migrate``` dan ```php artisan db:seed``` untuk melakukan migrasi dan seeding database 
 7. Jalankan perintah ```php artisan serve``` untuk menjalankan server
 8. Silakan daftarkan pengguna melalui fitur register/sign-up
+
+## Hasil Pengujian
+
+Berikut adalah hasil pengujian terhadap soal yang diberikan :
+https://docs.google.com/document/d/1H4fKprg2lyQPcfoeBG71vuV90HkGJWigecWXWVMBsn4/edit?usp=sharing
