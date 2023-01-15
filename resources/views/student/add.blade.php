@@ -1,5 +1,5 @@
 @extends('layouts.app-master')
-@section('title', 'Edit Pengelola')
+@section('title', 'Tambah Data Mahasiswa')
 @section('content')
 <div class="bg-light p-5 rounded">
     <div class="container">

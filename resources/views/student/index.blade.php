@@ -1,5 +1,5 @@
 @extends('layouts.app-master')
-
+@section('title', 'Mahasiswa')
 @section('content')
 <div class="bg-light p-5 rounded">
 @auth
