@@ -7,7 +7,7 @@ Daerah : Palangka Raya, Kalimantan Tengah
 
 ## Panduan Penggunaan Aplikasi
 
-Aplikasi ini dibuat menggunakan bahasa pemrograman PHP versi 8.1.13 dengan framework Laravel 9.47.0, untuk menjalankan aplikasi ini silakan lakukan langkah-langkah berikut :
+Aplikasi ini dibuat menggunakan bahasa pemrograman PHP versi 8.1.13 dengan framework Laravel 9.47.0 dengan database MySQL, relasi database yang digunakan dibuat dengan Eloquent ORM yang telah disediakan oleh laravel. Untuk menjalankan aplikasi ini silakan lakukan langkah-langkah berikut :
 1. Silakan clone/download file project yang tersimpan di branch master
 2. Jalankan perintah ```composer install```
 3. Buat sebuah database kosong di localhost
