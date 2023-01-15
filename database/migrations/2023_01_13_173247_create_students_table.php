@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('nim')->unique();
             $table->string('name');
-            $table->string('email');
-            $table->string('phone');
+            $table->string('email')->unique();
+            $table->string('phone')->unique();
             $table->string('address');
             $table->string('semester');
             $table->string('entry_year');
             $table->foreignId('major_id')->references('id')->on('majors')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('class_id')->references('id')->on('classes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('kelas_id')->references('id')->on('klasses')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

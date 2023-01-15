@@ -8,14 +8,23 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Mahasiswa</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Kelas</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Prodi</a></li>
+                <li><a href="{{ url('/') }}" class="nav-link px-2 text-secondary">Home</a></li>
+                <li><a href="{{ url('/mahasiswa') }}" class="nav-link px-2 text-white">Mahasiswa</a></li>
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            {{-- <form>
                 <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form> --}}
+
+            <form action="{{ url('/mahasiswa') }}" method="GET" role="search"
+                class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="Cari...">
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fas fa-search fa-sm"></i> Cari
+                    </button>
+                    </span>
+                </div>
             </form>
 
             @auth

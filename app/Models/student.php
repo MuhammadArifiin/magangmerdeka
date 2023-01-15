@@ -3,16 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class student extends Model
 {
-    public function major()
+    use Sortable;
+    public function kelas()
     {
-        return $this->belongsTo(major::class);
+        return $this->belongsTo(klasses::class);
     }
 
-    public function classes()
+    public function major()
     {
-        return $this->belongsTo(classes::class);
+        // return $this->belongsTo(classes::class);
+        return $this->belongsTo(major::class);
     }
 }

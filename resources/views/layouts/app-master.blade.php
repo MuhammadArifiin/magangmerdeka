@@ -8,6 +8,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.87.0">
     <title>Sistem Pengolahan Data Mahasiswa</title>
+    <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="{!! url('assets/bootstrap/css/bootstrap.min.css') !!}" rel="stylesheet">
@@ -34,7 +35,7 @@
 </head>
 
 <body>
-
+    @include('sweetalert::alert')
     @include('layouts.partials.navbar')
 
     <main class="container">
@@ -42,6 +43,18 @@
     </main>
 
     <script src="{!! url('assets/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#data').DataTable({
+                "order": [[3, 'desc']],
+                "paging": false,
+                "searching": false,
+            });
+        });
+    </script>
+
 
 </body>
 

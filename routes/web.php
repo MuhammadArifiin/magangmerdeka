@@ -4,6 +4,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\registerController;
+use App\Http\Controllers\studentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,21 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
 */
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/', [homeController::class, 'index'])->name('home.index');
+
+    Route::get('/mahasiswa', [studentController::class, 'index'])->name('student.index');
+
+    Route::get('/mahasiswa/tambah', [studentController::class, 'create'])->name('student.create');
+    Route::get('/mahasiswa/detail/{id}', [studentController::class, 'show']);
+    Route::post('/mahasiswa', [studentController::class, 'store'])->name('student.store');
+    // Route::get('/mahasiswa', [studentController::class, 'search'])->name('student.search');
+    Route::get('/mahasiswa/{id}', [studentController::class, 'edit']);
+    Route::put('/mahasiswa/{id}', [studentController::class, 'update']);
+    Route::delete('/mahasiswa/{id}', [studentController::class, 'destroy']);
 
     Route::group(['middleware' => ['guest']], function () {
 
